@@ -21,46 +21,59 @@ let checkoutButton = document.querySelector("#checkout");
 let homeButton = document.querySelector("#home-button");
 
 
+let totalCostDisplay = document.querySelector("#total-cost");
+let totalCost = 0;
+
 // Creating the catalogue array
 let catalogueArray = [
     {
-        name: "hOmnitool",
+        name: "Omnitool",
+        manufacturer: "Haimatsu Technologies",
         price: 100
     },
     {
-        name: "hARK",
+        name: "ZA-X2 Experimental Module",
+        manufacturer: "Haimatsu Technologies",
         price: 1000
     },
     {
-        name: "hDiveSuit",
+        name: "Ductile Suit",
+        manufacturer: "Haimatsu Technologies",
         price: 10000
     },
     {
-        name: "hPowerSuit",
+        name: "Power Suit",
+        manufacturer: "Haimatsu Technologies",
         price: 12000
     },
     {
-        name: "hBatteryPack",
+        name: "Energy Pal S.3 Battery Pack",
+        manufacturer: "Haimatsu Technologies",
         price: 200
     },
     {
-        name: "hTerminal",
+        name: "In-Ground Station Terminal",
+        manufacturer: "Haimatsu Technologies",
         price: 20000
     },
     {
-        name: "hTablet",
+        name: 'Standard Field Tablet (7x5")',
+        manufacturer: "Haimatsu Technologies",
         price: 200
     },
     {
-        name: "cGel1",
+        name: "Structure Gel (1L)",
+        manufacturer: "Carthage Industries",
         price: 150
     },
     {
-        name: "cGel5",
+        name: "Structure Gel (5L)",
+        manufacturer: "Carthage Industries",
         price: 600
     },
     {
-        name: "cBlackbox",
+        name: "CCRV-7 Blackbox",
+        manufacturer: "Carthage Industries",
         price: 4000
     }
 ];
@@ -76,64 +89,87 @@ function addProduct(i) {
 }
 */
 
+// Making the cart items show up on the webpage
+function addCartVisual(n) {
+    let cartTable = document.querySelector("#user-cart-table");
+    let newRow = document.createElement("tr");
+
+    let itemName = document.createElement("td");
+    itemName.innerHTML = catalogueArray[n].name;
+    newRow.appendChild(itemName);
+
+    let itemManufacturer = document.createElement("td");
+    itemManufacturer.innerHTML = catalogueArray[n].manufacturer;
+    newRow.appendChild(itemManufacturer);
+
+    let itemPrice = document.createElement("td");
+    itemPrice.innerHTML = ("$ " + catalogueArray[n].price + ".00");
+    newRow.appendChild(itemPrice);
+
+    cartTable.appendChild(newRow);
+
+    totalCost += catalogueArray[n].price;
+    totalCostDisplay.innerHTML = (" $ " + totalCost + ".00");
+}
+
 function addOmnitool() {
-    let itemName = catalogueArray[0].name;
-    cartArray.push(itemName);
-    console.log(itemName);
+    let item = catalogueArray[0];
+    cartArray.push(item);
+    addCartVisual(0);
 }
 
 function addARK() {
-    let itemName = catalogueArray[1].name;
-    cartArray.push(itemName);
-    console.log(itemName);
+    let item = catalogueArray[1];
+    cartArray.push(item);
+    addCartVisual(1);
 }
 
 function addDiveSuit() {
-    let itemName = catalogueArray[2].name;
-    cartArray.push(itemName);
-    console.log(itemName);
+    let item = catalogueArray[2];
+    cartArray.push(item);
+    addCartVisual(2);
 }
 
 function addPowerSuit() {
-    let itemName = catalogueArray[3].name;
-    cartArray.push(itemName);
-    console.log(itemName);
+    let item = catalogueArray[3];
+    cartArray.push(item);
+    addCartVisual(3);
 }
 
 function addBatteryPack() {
-    let itemName = catalogueArray[4].name;
-    cartArray.push(itemName);
-    console.log(itemName);
+    let item = catalogueArray[4];
+    cartArray.push(item);
+    addCartVisual(4);
 }
 
 function addTerminal() {
-    let itemName = catalogueArray[5].name;
-    cartArray.push(itemName);
-    console.log(itemName);
+    let item = catalogueArray[5];
+    cartArray.push(item);
+    addCartVisual(5);
 }
 
 function addTablet() {
-    let itemName = catalogueArray[6].name;
-    cartArray.push(itemName);
-    console.log(itemName);
+    let item = catalogueArray[6];
+    cartArray.push(item);
+    addCartVisual(6);
 }
 
 function addGel1() {
-    let itemName = catalogueArray[7].name;
-    cartArray.push(itemName);
-    console.log(itemName);
+    let item = catalogueArray[7];
+    cartArray.push(item);
+    addCartVisual(7);
 }
 
 function addGel5() {
-    let itemName = catalogueArray[8].name;
-    cartArray.push(itemName);
-    console.log(itemName);
+    let item = catalogueArray[8];
+    cartArray.push(item);
+    addCartVisual(8);
 }
 
 function addBlackbox() {
-    let itemName = catalogueArray[9].name;
-    cartArray.push(itemName);
-    console.log(itemName);
+    let item = catalogueArray[9];
+    cartArray.push(item);
+    addCartVisual(9);
 }
 
 
@@ -145,7 +181,7 @@ function viewCart() {
 }
 
 function checkout() {
-    cartDisplay.remove();
+    //cartDisplay.remove();
     paidDisplay.style.visibility = "visible";
 }
 

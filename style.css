@@ -8,9 +8,9 @@ body {
     margin: 5px;
 }
 
-.page#user-cart {
+/*.page#user-cart {
     visibility: hidden;
-}
+}*/
 
 .page#complete {
     visibility: hidden;
@@ -38,6 +38,7 @@ body {
 
 table {
     display: flex;
+    flex-direction: column;
 	border: 2px solid grey;
     width: 70%;
 }
@@ -69,4 +70,8 @@ th {
     text-align: left;
     font-size: 1.2em;
     margin-left: 10px;
+}
+
+.cost {
+    display: flex;
 }
