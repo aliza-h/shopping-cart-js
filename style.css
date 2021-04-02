@@ -8,6 +8,14 @@ body {
     margin: 5px;
 }
 
+.page#user-cart {
+    visibility: hidden;
+}
+
+.page#complete {
+    visibility: hidden;
+}
+
 .shop-menu {
     display: flex;
     flex-direction: row;
