@@ -8,12 +8,19 @@ body {
     margin: 5px;
 }
 
-/*.page#user-cart {
-    visibility: hidden;
-}*/
+.page#catalogue {
+    min-height: 0px;
+    visibility: visible;
+}
+
+.page#user-cart {
+    min-height: 0px;
+    visibility: visible;
+}
 
 .page#complete {
-    visibility: hidden;
+    min-height: 0px;
+    visibility: visible;
 }
 
 .shop-menu {

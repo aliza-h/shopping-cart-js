@@ -3,6 +3,32 @@ let catalogueDisplay = document.querySelector("#catalogue");
 let cartDisplay = document.querySelector("#user-cart");
 let paidDisplay = document.querySelector("#complete");
 
+// Defining page buttons
+let viewCartButton = document.querySelector("#view-cart");
+let checkoutButton = document.querySelector("#checkout");
+
+// the page functions
+console.log("loaded");
+
+function viewCart() {
+    console.log("viewCart!!");
+    catalogueDisplay.style.height = "0px"; // IT WORKED!!!!
+    catalogueDisplay.style.visibility = "hidden";
+    cartDisplay.style.visibility = "visible";
+}
+
+function checkout() {
+    console.log("checkout!!");
+    cartDisplay.style.height = "0px"; // IT WORKED!!!!
+    cartDisplay.style.visibility = "hidden";
+    paidDisplay.style.visibility = "visible";
+}
+
+viewCartButton.addEventListener("click", viewCart);
+checkoutButton.addEventListener("click", checkout);
+
+
+
 // Defining cart buttons
 let hOmnitoolButton = document.querySelector("#h-omnitool");
 let hARKButton = document.querySelector("#h-ark");
@@ -14,11 +40,6 @@ let hTabletButton = document.querySelector("#h-tablet");
 let cGel1Button = document.querySelector("#c-gel-1");
 let cGel5Button = document.querySelector("#c-gel-5");
 let cBlackboxButton = document.querySelector("#c-blackbox");
-
-// Defining page buttons
-let viewCartButton = document.querySelector("#view-cart");
-let checkoutButton = document.querySelector("#checkout");
-let homeButton = document.querySelector("#home-button");
 
 
 let totalCostDisplay = document.querySelector("#total-cost");
@@ -91,6 +112,7 @@ function addProduct(i) {
 
 // Making the cart items show up on the webpage
 function addCartVisual(n) {
+
     let cartTable = document.querySelector("#user-cart-table");
     let newRow = document.createElement("tr");
 
@@ -171,22 +193,6 @@ function addBlackbox() {
     cartArray.push(item);
     addCartVisual(9);
 }
-
-
-
-// the page functions
-function viewCart() {
-    catalogueDisplay.remove();
-    cartDisplay.style.visibility = "visible";
-}
-
-function checkout() {
-    //cartDisplay.remove();
-    paidDisplay.style.visibility = "visible";
-}
-
-viewCartButton.addEventListener("click", viewCart);
-checkoutButton.addEventListener("click", checkout);
 
 
 
