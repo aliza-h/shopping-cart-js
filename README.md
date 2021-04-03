@@ -1,4 +1,9 @@
-**GOAL:** online shopping cart
+**TO FIX:**
+- "Transaction complete" display
+
+
+
+*GOAL:** online shopping cart
 
 - 10 to 15 items available
 - Button for each item (name it "Add to cart")

@@ -8,20 +8,20 @@ let viewCartButton = document.querySelector("#view-cart");
 let checkoutButton = document.querySelector("#checkout");
 
 // the page functions
-console.log("loaded");
+
+cartDisplay.style.display = "none";
+console.log("Page loaded. Cart invisible.");
 
 function viewCart() {
     console.log("viewCart!!");
-    catalogueDisplay.style.height = "0px"; // IT WORKED!!!!
-    catalogueDisplay.style.visibility = "hidden";
-    cartDisplay.style.visibility = "visible";
+    catalogueDisplay.style.display = "none";
+    cartDisplay.style.display = "inline";
 }
 
 function checkout() {
     console.log("checkout!!");
-    cartDisplay.style.height = "0px"; // IT WORKED!!!!
-    cartDisplay.style.visibility = "hidden";
-    paidDisplay.style.visibility = "visible";
+    cartDisplay.style.display = "none";
+    paidDisplay.style.display = "flex";
 }
 
 viewCartButton.addEventListener("click", viewCart);

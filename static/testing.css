@@ -17,6 +17,19 @@ body {
 }
 */
 .page#complete {
+    min-height: 0px;
+}
+
+.page#complete div.paid-container {
+    min-height: 0px;
+    display: flex;
+    flex-direction: column;
+    height: 0px;
+}
+
+.page#complete div.paid-container h3,
+.page#complete div.paid-container img,
+.page#complete div.paid-container button, {
     display: none;
 }
 
